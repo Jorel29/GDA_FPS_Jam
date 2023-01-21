@@ -9,15 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccd821cb4986df447a7024d8f2d003f2, type: 3}
-  m_Name: SemiActiveHomingFish_Secondary
+  m_Script: {fileID: 11500000, guid: 6a34bd5048c5efa4b9de6ed1fc5cf4de, type: 3}
+  m_Name: Semi Active Homing Fish_Secondary
   m_EditorClassIdentifier: 
-  id: semiactivehomingFishSecondary
-  description: shoots a hitscan bullet which marks a valid target
+  id: 
+  description: 
   icon: {fileID: 0}
   pivot: {fileID: 0}
-  firingType: 1
-  actionCooldown: 0.5
+  firingType: 0
+  actionCooldown: 0
   maxHoldDuration: 0
   energyType: 0
   energyRegenType: 0
@@ -31,4 +31,4 @@ MonoBehaviour:
   screenShakeImpulseDirection: {x: 0, y: 0, z: 0}
   audioClip: {fileID: 0}
   volume: 1
-  _bullet: {fileID: 3648734522970492190, guid: 61bd9950f82d25744abbe82f63ac836b, type: 3}
+  _bullet: {fileID: 0}
