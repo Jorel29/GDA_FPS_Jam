@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3648734522970492177}
   - component: {fileID: 2754127977494684540}
+  - component: {fileID: 5673725763132921380}
   m_Layer: 9
   m_Name: SemiActiveHomingFishHitscanBullet
   m_TagString: Untagged
@@ -131,3 +132,25 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &5673725763132921380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3648734522970492190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41aa07b10110cd74ca6782791afa1472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  lifespan: 0.5
+  hipSpread: 0
+  ADSspread: 0
+  targetPosition: {x: 0, y: 0, z: 0}
+  hasRaycastHit: 0
+  lineRenderer: {fileID: 2754127977494684540}
+  raycastCheckLayers:
+    serializedVersion: 2
+    m_Bits: 1

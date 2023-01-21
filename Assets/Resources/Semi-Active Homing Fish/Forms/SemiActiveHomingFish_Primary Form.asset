@@ -31,7 +31,7 @@ MonoBehaviour:
   screenShakeImpulseDirection: {x: 0, y: 0, z: 0}
   audioClip: {fileID: 0}
   volume: 1
-  _bullet: {fileID: 3648734522970492190, guid: 1bfd2d6e72054b049949306fc336100d, type: 3}
+  _bullet: {fileID: 3648734522970492190, guid: 12ff41ee98ececa429710de8dae25793, type: 3}
   raycastCheckLayers:
     serializedVersion: 2
     m_Bits: 129
