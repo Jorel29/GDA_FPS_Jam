@@ -305,8 +305,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponID: SemiActiveHomingFish
-  primaryForm: {fileID: 11400000, guid: 05ac0fef83b297040a119ca5734c872a, type: 2}
-  secondaryForm: {fileID: 11400000, guid: 6d165cf0dc3c4bb43b72812160967feb, type: 2}
+  primaryForm: {fileID: 11400000, guid: 381d7f8759bf15e45864f246ebc8edf1, type: 2}
+  secondaryForm: {fileID: 11400000, guid: 1214b3f409806b54688a0fdd9e623928, type: 2}
   ADSVirtualCamera: {fileID: 1591959767614796963}
   ADSZoomModifier: 1.4
   barrelSpawn: {fileID: 1361343249479498785}

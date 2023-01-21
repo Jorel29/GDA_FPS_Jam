@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a34bd5048c5efa4b9de6ed1fc5cf4de, type: 3}
-  m_Name: Semi Active Homing Fish_Secondary
+  m_Name: SemiActiveHomingFish_Secondary
   m_EditorClassIdentifier: 
-  id: 
-  description: 
+  id: semiactivehomingFishSecondary
+  description: toggles a taget designator to ON that locks onto the nearest target
+    within the lock area
   icon: {fileID: 0}
   pivot: {fileID: 0}
-  firingType: 0
-  actionCooldown: 0
+  firingType: 1
+  actionCooldown: 0.15
   maxHoldDuration: 0
   energyType: 0
   energyRegenType: 0
@@ -31,4 +32,4 @@ MonoBehaviour:
   screenShakeImpulseDirection: {x: 0, y: 0, z: 0}
   audioClip: {fileID: 0}
   volume: 1
-  _bullet: {fileID: 0}
+  _bullet: {fileID: 3648734522970492190, guid: 61bd9950f82d25744abbe82f63ac836b, type: 3}
