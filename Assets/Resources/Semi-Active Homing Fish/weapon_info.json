@@ -1,5 +1,5 @@
 {
-  "id": "SAHFish",
+  "id": "SemiActiveHomingFish",
   "weaponPrefabPath": "Semi-Active Homing Fish/WeaponPrefab/HomingFishGun",
   "meshPath": "Semi-Active Homing Fish/Models/testModel",
   "displayName": "Semi-Active Homing Fish Gun"
