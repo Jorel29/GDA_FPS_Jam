@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3648734522970492177}
-  - component: {fileID: 4794531932817931711}
   - component: {fileID: 2754127977494684540}
   m_Layer: 9
-  m_Name: SARHFishHitscanBullet
+  m_Name: SemiActiveHomingFishHitscanBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,28 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4794531932817931711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648734522970492190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a77fb9823215d004b9931bce2f6bf641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  lifespan: 0.075
-  hipSpread: 0.05
-  ADSspread: 0
-  targetPosition: {x: 0, y: 0, z: 0}
-  hasRaycastHit: 0
-  lineRenderer: {fileID: 2754127977494684540}
-  raycastCheckLayers:
-    serializedVersion: 2
-    m_Bits: 1
 --- !u!120 &2754127977494684540
 LineRenderer:
   m_ObjectHideFlags: 0

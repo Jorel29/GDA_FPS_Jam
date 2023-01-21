@@ -12,7 +12,7 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
     public override void Start()
     {
         base.Start();
-        homingTarget = FormController.Instance.currentForm.GetComponent<HomingFishWeaponController>().homingTarget;
+        homingTarget = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().homingTarget;
     }
 
     private void Update()

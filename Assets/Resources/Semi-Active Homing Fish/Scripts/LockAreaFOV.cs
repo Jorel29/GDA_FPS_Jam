@@ -49,6 +49,7 @@ public class LockAreaFOV : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
+                    Debug.Log("New target");
                 }
             }
         }
