@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingFish_HitscanMarker : BaseHitscan
+public class SAHFish_HitscanMarker : BaseHitscan
 {
     public override void ProcessDamage()
     {
