@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Forms/HomingFish_Secondary Form")]
+[CreateAssetMenu(menuName = "Forms/SemiActiveHomingFish_Secondary Form")]
 public class SemiActiveHomingFish_Secondary : BaseForm
 {
     [Header("Form Specific Data")]

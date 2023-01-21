@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fb4ed66f7758af4088ef1d9dc62977a, type: 3}
   m_Name: SemiActiveHomingFish_Primary Form
   m_EditorClassIdentifier: 
-  id: homingFishPrimary
+  id: semiactivehomingFishPrimary
   description: shoots projectiles that home onto the homing target
   icon: {fileID: 0}
   pivot: {fileID: 0}
