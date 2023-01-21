@@ -7,12 +7,12 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
     public float homingStrength = 0;
     public float homingRate = 1;
     public float maximumHomingSpeed = 5;
-    public Transform homingTarget;
+    public Transform lockedTarget;
 
     public override void Start()
     {
         base.Start();
-        homingTarget = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().homingTarget;
+        lockedTarget = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().lockedTarget;
     }
 
     private void Update()
@@ -27,7 +27,7 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
 
     private void FixedUpdate()
     {
-        if(homingTarget == null)
+        if(lockedTarget == null)
         {
             return;
         }
@@ -37,7 +37,7 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
 
     void ApplyHomingForce()
     {
-        Vector3 homingDirection = (homingTarget.position - transform.position).normalized;
+        Vector3 homingDirection = (lockedTarget.position - transform.position).normalized;
 
 
         _rigidbody.velocity = Vector3.Lerp(_rigidbody.velocity.normalized, homingDirection, homingStrength) * _rigidbody.velocity.magnitude;

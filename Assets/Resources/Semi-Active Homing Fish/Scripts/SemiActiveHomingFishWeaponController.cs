@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SemiActiveHomingFishWeaponController : MonoBehaviour
 {
-    public Transform homingTarget;
+    public Transform lockedTarget;
    
 
 }

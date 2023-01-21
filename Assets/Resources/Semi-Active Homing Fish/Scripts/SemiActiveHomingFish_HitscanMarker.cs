@@ -13,7 +13,7 @@ public class SemiActiveHomingFish_HitscanMarker : BaseHitscan
         {
             // If it does, damage the target
             damageable.ProcessDamage(damage);
-            FormController.Instance.currentForm.GetComponent<HomingFishWeaponController>().homingTarget = damageable.transform;
+            FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().lockedTarget = damageable.transform;
         }
 
         HitInteractable hitable = hitInfo.transform.gameObject.GetComponent<HitInteractable>();
