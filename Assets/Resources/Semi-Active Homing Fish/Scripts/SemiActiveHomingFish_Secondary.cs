@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Forms/HomingFish_Secondary Form")]
-public class SAHFish_Secondary : BaseForm
+public class SemiActiveHomingFish_Secondary : BaseForm
 {
     [Header("Form Specific Data")]
     public GameObject _bullet;

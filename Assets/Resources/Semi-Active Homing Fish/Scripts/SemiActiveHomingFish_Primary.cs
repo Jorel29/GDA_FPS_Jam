@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SAHFish_Primary : MonoBehaviour
+public class SemiActiveHomingFish_Primary : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

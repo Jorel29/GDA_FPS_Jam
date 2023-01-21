@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SAHFish_PrimaryProjectile : BaseBullet
+public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
 {
     public float homingStrength = 0;
     public float homingRate = 1;
