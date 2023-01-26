@@ -7,21 +7,19 @@ public class SemiActiveHomingFish_Secondary : BaseForm
 {
     [Header("Form Specific Data")]
     public GameObject _bullet;
-
+    private trakerState;
     //FormAction() is called each time the form "shoots".
     public override void FormAction(float context)
     {
         base.FormAction(-1);
         //checks the Controller's "trackerActive" bool variable, and sets it to true or false
-        if ( FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive == true)
+        if (FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive == false)
         {
-            Debug.Log("setting to false");
-            FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive = false;
+            FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive = true;
         }
         else
         {
-            Debug.Log("setting to true");
-            FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive = true;
+            FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive = false;
         }
         //Spawn bullet prefab at weapon's barrel position
         var bullet = Instantiate(_bullet, FormController.Instance.currentForm.barrelSpawn.position, Quaternion.identity);
