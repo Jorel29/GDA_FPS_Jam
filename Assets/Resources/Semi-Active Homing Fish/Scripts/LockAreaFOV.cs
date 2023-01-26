@@ -37,9 +37,10 @@ public class LockAreaFOV : MonoBehaviour
     {
         visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-
+        Debug.Log(visibleTargets);
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
+            Debug.Log(targetsInViewRadius[i]);  
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
@@ -49,7 +50,6 @@ public class LockAreaFOV : MonoBehaviour
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
-                    Debug.Log("New target");
                 }
             }
         }

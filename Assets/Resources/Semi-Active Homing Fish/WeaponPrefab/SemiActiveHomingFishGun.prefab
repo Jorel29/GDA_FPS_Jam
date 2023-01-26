@@ -384,11 +384,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a90b775199d8b04e96a143aafb44dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 15
-  viewAngle: 40
+  viewRadius: 10
+  viewAngle: 10
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be5a739534e49d409f25411c3e1fbdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  homingTarget: {fileID: 0}
+  lockedTarget: {fileID: 0}
 --- !u!1 &7937506909260774583
 GameObject:
   m_ObjectHideFlags: 0
