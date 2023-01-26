@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Net.Security;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Forms/SemiActiveHomingFish_Secondary Form")]
@@ -8,6 +10,7 @@ public class SemiActiveHomingFish_Secondary : BaseForm
     [Header("Form Specific Data")]
     public GameObject _bullet;
     private bool trackerActive = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive;
+    private LockAreaFOV areaFOV = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().areaFOV;
     //FormAction() is called each time the form "shoots".
     public override void FormAction(float context)
     {
@@ -16,7 +19,16 @@ public class SemiActiveHomingFish_Secondary : BaseForm
         Debug.Log("TrackerState:" + trackerActive);
         //toggle tracker on or off
         toggleTracker();
-
+        Vector3 targetDir;
+        if (areaFOV.targetable.Count > 0)
+        {
+            targetDir = areaFOV.targetable.First().position - areaFOV.transform.position;
+        }
+        else
+        {
+            targetDir = Camera.main.transform.forward;
+        }
+        
         //Spawn bullet prefab at weapon's barrel position
         var bullet = Instantiate(_bullet, FormController.Instance.currentForm.barrelSpawn.position, Quaternion.identity);
         SpawnedGarbageController.Instance.AddAsChild(bullet);
@@ -24,7 +36,7 @@ public class SemiActiveHomingFish_Secondary : BaseForm
         // This allows us to shoot these projectile bullets from the gun rather than the center of the screen to get the desired appearance
         // If the weapon were hitscan, we could skip this and just add tracers from the gun to the desired destination
 
-        bullet.GetComponent<BaseHitscan>().SetTargetDirection(Camera.main.transform.forward);
+        bullet.GetComponent<BaseHitscan>().SetTargetDirection(targetDir);
 
 
     }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 
 //aquired and modified from tutorial https://github.com/SebLague/Field-of-View/blob/master/Episode%2001/Scripts/FieldOfView.cs
 //which was made from Sebastian Lague
@@ -15,7 +16,7 @@ public class LockAreaFOV : MonoBehaviour
     public LayerMask obstacleMask;
 
     [HideInInspector]
-    public List<Transform> visibleTargets = new List<Transform>();
+    public List<Transform> targetable = new List<Transform>();
 
     void Start()
     {
@@ -34,7 +35,7 @@ public class LockAreaFOV : MonoBehaviour
 
     void FindVisibleTargets()
     {
-        visibleTargets.Clear();
+        targetable.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
@@ -43,11 +44,14 @@ public class LockAreaFOV : MonoBehaviour
             Vector3 dirToTarget = (target.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
-                float dstToTarget = Vector3.Distance(transform.position, target.position);
+                Damageable damageable = target.gameObject.GetComponent<Damageable>();
 
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                // Check if target is a Damageable
+                if (damageable != null)
                 {
-                    visibleTargets.Add(target);
+                    // If it is, add to targetable list
+                    targetable.Add(target);
+                    Debug.Log("LOCK AREA" + targetable);
                 }
             }
         }
