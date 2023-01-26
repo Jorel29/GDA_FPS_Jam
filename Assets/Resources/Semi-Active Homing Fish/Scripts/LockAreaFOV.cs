@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-//aquired and modified from https://github.com/SebLague/Field-of-View/blob/master/Episode%2001/Scripts/FieldOfView.cs
+//aquired and modified from tutorial https://github.com/SebLague/Field-of-View/blob/master/Episode%2001/Scripts/FieldOfView.cs
 //which was made from Sebastian Lague
 //modifed by Jorel Huerto
 public class LockAreaFOV : MonoBehaviour
@@ -37,10 +37,9 @@ public class LockAreaFOV : MonoBehaviour
     {
         visibleTargets.Clear();
         Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
-        Debug.Log(visibleTargets);
         for (int i = 0; i < targetsInViewRadius.Length; i++)
         {
-            Debug.Log(targetsInViewRadius[i]);  
+            Debug.Log(targetsInViewRadius[i].name);  
             Transform target = targetsInViewRadius[i].transform;
             Vector3 dirToTarget = (target.position - transform.position).normalized;
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
