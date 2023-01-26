@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class SemiActiveHomingFish_HitscanMarker : BaseHitscan
 {
-    public bool targetDesignatorOn;
 
-    private void Update()
-    {
-        Debug.Log(targetDesignatorOn);
-    }
     public override void ProcessDamage()
     {
         Damageable damageable = hitInfo.transform.gameObject.GetComponent<Damageable>();

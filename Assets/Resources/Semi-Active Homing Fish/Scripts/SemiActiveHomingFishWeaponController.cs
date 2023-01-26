@@ -5,6 +5,6 @@ using UnityEngine;
 public class SemiActiveHomingFishWeaponController : MonoBehaviour
 {
     public Transform lockedTarget;
-    public bool trackerActive;
+    public bool trackerActive = false;
 
 }
