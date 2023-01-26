@@ -11,7 +11,6 @@ public class LockAreaFOV : MonoBehaviour
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
-
     public LayerMask targetMask;
     public LayerMask obstacleMask;
 
@@ -46,7 +45,7 @@ public class LockAreaFOV : MonoBehaviour
             {
                 float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
+                if (!Physics.Raycast(transform.position, dirToTarget, out hitInfo, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
                 }

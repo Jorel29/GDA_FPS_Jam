@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class SemiActiveHomingFish_HitscanMarker : BaseHitscan
 {
-    private bool targetDesignatorOn;
+    public bool targetDesignatorOn;
 
-    public override void Start()
+    private void Update()
     {
-        base.Start();
+        Debug.Log(targetDesignatorOn);
     }
     public override void ProcessDamage()
     {
