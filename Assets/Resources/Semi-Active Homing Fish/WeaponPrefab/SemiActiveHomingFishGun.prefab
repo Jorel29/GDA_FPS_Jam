@@ -384,15 +384,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a90b775199d8b04e96a143aafb44dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
-  viewAngle: 10
+  _bullet: {fileID: 0}
+  viewRadius: 50
+  viewAngle: 35
   targetMask:
     serializedVersion: 2
     m_Bits: 1
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
-  visibleTargets: []
+  targetable: []
 --- !u!114 &-7275507194284777757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,7 +406,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be5a739534e49d409f25411c3e1fbdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bullet: {fileID: 3648734522970492190, guid: 61bd9950f82d25744abbe82f63ac836b, type: 3}
   lockedTarget: {fileID: 0}
+  trackerActive: 0
 --- !u!1 &7937506909260774583
 GameObject:
   m_ObjectHideFlags: 0
