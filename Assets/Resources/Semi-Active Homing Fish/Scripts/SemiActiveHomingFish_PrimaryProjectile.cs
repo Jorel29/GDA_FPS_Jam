@@ -15,8 +15,9 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
     public override void Start()
     {
         base.Start();
+        SetDirection(FormController.Instance.currentForm.barrelSpawn.forward);
         lockedTarget = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().lockedTarget;
-        targets = FormController.Instance.currentForm.GetComponent<LockAreaFOV>().targetable;
+        targets = gameObject.GetComponent<LockAreaFOV>().targetable;
     }
 
     private void Update()
@@ -27,7 +28,7 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
         {
             homingStrength += homingRate * Time.deltaTime;
         }
-        
+        //accelerate fish 
         _rigidbody.AddForce(transform.forward * acceleration, ForceMode.Acceleration);
         
     }
@@ -40,19 +41,17 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
         {
             return;
         }
-        //apply homing force if tracker is active
+        //apply homing force if tracker is active otherwise fish uses own tracking
         if (FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive)
         {
             ApplyHomingForce();
         }else if (targets.Count > 0)
         {
             lockedTarget = targets.First();
+            Debug.Log("FISH FOUND TARGET");
             ApplyHomingForce();
         }
-        else
-        {
-            lockedTarget= null;
-        }
+        
     }
 
     void ApplyHomingForce()

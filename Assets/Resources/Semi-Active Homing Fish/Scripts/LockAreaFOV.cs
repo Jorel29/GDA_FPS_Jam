@@ -9,7 +9,6 @@ using System.Linq;
 //modifed by Jorel Huerto
 public class LockAreaFOV : MonoBehaviour
 {
-    public GameObject _bullet;
     public float viewRadius;
     [Range(0, 360)]
     public float viewAngle;
@@ -51,7 +50,7 @@ public class LockAreaFOV : MonoBehaviour
                 {
                     // If it is, add to targetable list
                     targetable.Add(target);
-                    Debug.Log("TARGET ADDED:" + targetable.First().name);
+                    //Debug.Log("TARGET ADDED:" + targetable.First().name);
                     
                 }
             }
