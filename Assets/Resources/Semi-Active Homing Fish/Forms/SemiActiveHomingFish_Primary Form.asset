@@ -16,17 +16,17 @@ MonoBehaviour:
   description: shoots projectiles that home onto the homing target
   icon: {fileID: 0}
   pivot: {fileID: 0}
-  firingType: 0
+  firingType: 1
   actionCooldown: 0.15
   maxHoldDuration: 0
-  energyType: 0
-  energyRegenType: 0
-  energyRegenCooldown: 0
+  energyType: 1
+  energyRegenType: 3
+  energyRegenCooldown: 3
   energyRegenRate: 0
-  energyMax: 0
-  energyCost: 0
+  energyMax: 1
+  energyCost: 1
   shareEnergyWithOtherForm: 0
-  autoReloadOnEmpty: 0
+  autoReloadOnEmpty: 1
   screenShakeImpulseMagnitude: 0
   screenShakeImpulseDirection: {x: 0, y: 0, z: 0}
   audioClip: {fileID: 0}

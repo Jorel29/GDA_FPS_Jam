@@ -21,7 +21,7 @@ public class LockAreaFOV : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("FindTargetsWithDelay", .2f);
+        StartCoroutine("FindTargetsWithDelay", .1f);
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -51,7 +51,7 @@ public class LockAreaFOV : MonoBehaviour
                 {
                     // If it is, add to targetable list
                     targetable.Add(target);
-                    Debug.Log("TARGET LOCKED:" + targetable.First().name);
+                    Debug.Log("TARGET ADDED:" + targetable.First().name);
                     
                 }
             }

@@ -17,8 +17,9 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
 
     private void Update()
     {
+        
 
-        if(homingStrength < 1)
+        if (homingStrength < 1)
         {
             homingStrength += homingRate * Time.deltaTime;
         }
@@ -27,7 +28,8 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
 
     private void FixedUpdate()
     {
-        if(lockedTarget == null)
+        lockedTarget = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().lockedTarget;
+        if (lockedTarget == null)
         {
             return;
         }

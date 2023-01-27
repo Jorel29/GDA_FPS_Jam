@@ -16,8 +16,9 @@ public class SemiActiveHomingFish_Secondary : BaseForm
     public override void FormAction(float context)
     {
         base.FormAction(-1);
+        //tracker Toggle
         FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().ToggleTrackerState();
-        trackerActive = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive;
+        /*trackerActive = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive;
         targetable = FormController.Instance.currentForm.GetComponent<LockAreaFOV>().targetable;
         Debug.Log(targetable.Count);
         Debug.Log("TrackerState:" + trackerActive);
@@ -37,7 +38,7 @@ public class SemiActiveHomingFish_Secondary : BaseForm
         // If the weapon were hitscan, we could skip this and just add tracers from the gun to the desired destination
 
         bullet.GetComponent<BaseHitscan>().SetTargetDirection(targetDir);
-
+        */
 
     }
 }
