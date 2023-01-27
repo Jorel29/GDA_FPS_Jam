@@ -49,6 +49,10 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
             lockedTarget = targets.First();
             ApplyHomingForce();
         }
+        else
+        {
+            lockedTarget= null;
+        }
     }
 
     void ApplyHomingForce()

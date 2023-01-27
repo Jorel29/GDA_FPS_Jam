@@ -24,7 +24,7 @@ MonoBehaviour:
   energyRegenCooldown: 3
   energyRegenRate: 0
   energyMax: 1
-  energyCost: 1
+  energyCost: 0
   shareEnergyWithOtherForm: 0
   autoReloadOnEmpty: 1
   screenShakeImpulseMagnitude: 0

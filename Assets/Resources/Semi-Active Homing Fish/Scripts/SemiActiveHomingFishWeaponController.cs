@@ -30,9 +30,9 @@ public class SemiActiveHomingFishWeaponController : MonoBehaviour
             Vector3 targetDir = Camera.main.transform.forward;
             if (targets.Count > 0)
             {
-                targetDir = (targets.First().position - FormController.Instance.currentForm.barrelSpawn.position).normalized;
-                Debug.Log("TARGET LOCKED: " + targets.First().name);
                 lockedTarget = targets.First();
+                targetDir = (lockedTarget.position - FormController.Instance.currentForm.barrelSpawn.position).normalized;
+                Debug.Log("TARGET LOCKED: " + lockedTarget.name);
             }else
             {
                 lockedTarget = null;
