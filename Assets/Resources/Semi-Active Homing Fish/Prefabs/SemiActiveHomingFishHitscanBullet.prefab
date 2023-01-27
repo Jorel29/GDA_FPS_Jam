@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41aa07b10110cd74ca6782791afa1472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  lifespan: 0.5
+  damage: 0
+  lifespan: 0.01
   hipSpread: 0
   ADSspread: 0
   targetPosition: {x: 0, y: 0, z: 0}
