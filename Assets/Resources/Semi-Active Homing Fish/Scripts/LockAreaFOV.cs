@@ -21,13 +21,9 @@ public class LockAreaFOV : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine("FindTargetsWithDelay", .2f);
+        StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
-    void Update()
-    {
-        FindVisibleTargets();
-    }
     IEnumerator FindTargetsWithDelay(float delay)
     {
         while (true)

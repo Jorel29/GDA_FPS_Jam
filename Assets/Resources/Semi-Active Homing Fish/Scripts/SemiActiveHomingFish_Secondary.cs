@@ -11,25 +11,23 @@ public class SemiActiveHomingFish_Secondary : BaseForm
     public GameObject _bullet;
     private bool trackerActive;
     private List<Transform> targetable;
-    private Transform lastTarget;
+
     //FormAction() is called each time the form "shoots".
     public override void FormAction(float context)
     {
         base.FormAction(-1);
+        FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().ToggleTrackerState();
         trackerActive = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive;
         targetable = FormController.Instance.currentForm.GetComponent<LockAreaFOV>().targetable;
         Debug.Log(targetable.Count);
         Debug.Log("TrackerState:" + trackerActive);
         //toggle tracker on or off
-        toggleTracker();
-
+        
         Vector3 targetDir = Camera.main.transform.forward;
         if (targetable.Count > 0)
         {
-            targetDir = (targetable.First().position - FormController.Instance.currentForm.barrelSpawn.position).normalized;    
+            targetDir = (targetable.First().position - FormController.Instance.currentForm.barrelSpawn.position).normalized;
         }
-        
-
         
         //Spawn bullet prefab at weapon's barrel position
         var bullet = Instantiate(_bullet, FormController.Instance.currentForm.barrelSpawn.position, Quaternion.identity);
@@ -39,19 +37,7 @@ public class SemiActiveHomingFish_Secondary : BaseForm
         // If the weapon were hitscan, we could skip this and just add tracers from the gun to the desired destination
 
         bullet.GetComponent<BaseHitscan>().SetTargetDirection(targetDir);
-        
 
-    }
 
-    private void toggleTracker()
-    {
-        if (trackerActive)
-        {
-            trackerActive = false;
-        }
-        else
-        {
-            trackerActive = true;
-        }
     }
 }
