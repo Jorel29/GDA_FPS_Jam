@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.PackageManager;
 using System.Linq;
 
-//aquired and modified from tutorial https://github.com/SebLague/Field-of-View/blob/master/Episode%2001/Scripts/FieldOfView.cs
+//followed code from tutorial https://github.com/SebLague/Field-of-View/blob/master/Episode%2001/Scripts/FieldOfView.cs
 //which was made from Sebastian Lague
 //modifed by Jorel Huerto
 public class LockAreaFOV : MonoBehaviour
