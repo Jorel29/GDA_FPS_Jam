@@ -7,6 +7,7 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
     public float homingStrength = 0;
     public float homingRate = 1;
     public float maximumHomingSpeed = 5;
+    public float acceleration = 0.5f;
     public Transform lockedTarget;
 
     public override void Start()
@@ -23,7 +24,9 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
         {
             homingStrength += homingRate * Time.deltaTime;
         }
-
+        
+        _rigidbody.AddForce(transform.forward * acceleration, ForceMode.Acceleration);
+        
     }
 
     private void FixedUpdate()
@@ -33,8 +36,10 @@ public class SemiActiveHomingFish_PrimaryProjectile : BaseBullet
         {
             return;
         }
-
-        ApplyHomingForce();
+        if (FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive)
+        {
+            ApplyHomingForce();
+        }
     }
 
     void ApplyHomingForce()

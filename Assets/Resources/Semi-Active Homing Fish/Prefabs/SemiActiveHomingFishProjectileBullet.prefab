@@ -78,8 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 2354521773699952302}
-  damage: 1
-  speed: 25
+  damage: 30
+  speed: 5
   lifespan: 10
   hipSpread: 0
   ADSspread: 0
@@ -88,7 +88,8 @@ MonoBehaviour:
   homingStrength: 0
   homingRate: 0.3
   maximumHomingSpeed: 100
-  homingTarget: {fileID: 0}
+  acceleration: 50
+  lockedTarget: {fileID: 0}
 --- !u!1 &7676393172727347389
 GameObject:
   m_ObjectHideFlags: 0
