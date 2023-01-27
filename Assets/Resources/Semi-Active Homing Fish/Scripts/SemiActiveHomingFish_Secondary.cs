@@ -9,25 +9,27 @@ public class SemiActiveHomingFish_Secondary : BaseForm
 {
     [Header("Form Specific Data")]
     public GameObject _bullet;
-    private bool trackerActive = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive;
-    private LockAreaFOV areaFOV = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().areaFOV;
+    private bool trackerActive;
+    private List<Transform> targetable;
+    private Transform lastTarget;
     //FormAction() is called each time the form "shoots".
     public override void FormAction(float context)
     {
         base.FormAction(-1);
-        
+        trackerActive = FormController.Instance.currentForm.GetComponent<SemiActiveHomingFishWeaponController>().trackerActive;
+        targetable = FormController.Instance.currentForm.GetComponent<LockAreaFOV>().targetable;
+        Debug.Log(targetable.Count);
         Debug.Log("TrackerState:" + trackerActive);
         //toggle tracker on or off
         toggleTracker();
-        Vector3 targetDir;
-        if (areaFOV.targetable.Count > 0)
+
+        Vector3 targetDir = Camera.main.transform.forward;
+        if (targetable.Count > 0)
         {
-            targetDir = areaFOV.targetable.First().position - areaFOV.transform.position;
+            targetDir = (targetable.First().position - FormController.Instance.currentForm.barrelSpawn.position).normalized;    
         }
-        else
-        {
-            targetDir = Camera.main.transform.forward;
-        }
+        
+
         
         //Spawn bullet prefab at weapon's barrel position
         var bullet = Instantiate(_bullet, FormController.Instance.currentForm.barrelSpawn.position, Quaternion.identity);
@@ -37,7 +39,7 @@ public class SemiActiveHomingFish_Secondary : BaseForm
         // If the weapon were hitscan, we could skip this and just add tracers from the gun to the desired destination
 
         bullet.GetComponent<BaseHitscan>().SetTargetDirection(targetDir);
-
+        
 
     }
 
